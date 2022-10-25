@@ -20,14 +20,14 @@ public class Main {
         task.put("str3", 3);
         task.put("str4", 4);
         task.put("str5", 5);
-        addTask("str2", 3);
+        addTask("str2", 2);
 
         System.out.println(task);
 
     } //-------------END main--------------------
 
     public static void addTask(String str, Integer number) {
-        if (task.containsKey(str) && task.get(str) == number) {
+        if (task.containsKey(str) && task.get(str).equals(number)) {
             throw new IllegalArgumentException("Такая запись  уже етсь");
         }
         task.put(str, number);
