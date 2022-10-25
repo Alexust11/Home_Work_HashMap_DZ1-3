@@ -20,26 +20,18 @@ public class Main {
         task.put("str3", 3);
         task.put("str4", 4);
         task.put("str5", 5);
-        addTask("str1", 1);
+        addTask("str2", 3);
 
         System.out.println(task);
 
     } //-------------END main--------------------
 
     public static void addTask(String str, Integer number) {
-
-        System.out.println(" есть ключ-"+task.containsKey(str));
-        System.out.println(" есть значение-"+task.containsValue(number));
+        if (task.containsKey(str) && task.get(str) == number) {
+            throw new IllegalArgumentException("Такая запись  уже етсь");
+        }
         task.put(str, number);
-//        if (task.containsKey(str) && task.containsValue(number)) {
-//            throw new IllegalArgumentException("Такая запись  уже етсь");
-//        }
-//        if (task.containsKey(str) && !task.containsValue(number)) {
-//            task.put(str, number);
-//        }
-//        if (!task.containsKey(str) && !task.containsValue(number)) {
-//            task.put(str, number);
-//        }
+
     }
 
 }//--------------END CLASS MAIN----------------------
